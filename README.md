@@ -28,4 +28,4 @@ Jacks(J): +4
 
 NOTE: actions are not stackable i.e. if Q is played by player 1 then player two draws two cards and cannot play a Q from his hand on that turn even if available
 
-#TO RUN THIS CODE JUST COPY THE MAIN CODE AND RUN IT IN ANY COMPILER NAME THE FILE AS MAIN.java
+# TO RUN THIS CODE JUST COPY THE MAIN CODE AND RUN IT IN ANY COMPILER NAME THE FILE AS MAIN.java
