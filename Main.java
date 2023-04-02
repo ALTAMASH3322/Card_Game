@@ -123,10 +123,11 @@ public class Main {
 		int point =21;
 		int c=0;
 		int plays[]= {1,2,3,4};
-		//boolean flag =true;
+		boolean flag =true;
 		//System.out.println("here in plays");
 		try {
 		while(play) {
+			flag=true;
 			if(p1.isEmpty()) {
 				System.out.println("PLAYER 1 IS WINNER");
 				break;
@@ -154,13 +155,21 @@ public class Main {
 						int k1 = p1.get(i);
 						if(check(k1,t)) {
 							if(isAce(k1)) {
+								if(isAce(t)){
+									continue;
+								}
 								p1.remove(i);
+								flag=false;
 								t=k1;
 								c+=2;
 								break;
 							}
 							if(isKing(k1)) {
+								if(isKing(t)){
+									continue;
+								}
 								p1.remove(i);
+								flag=false;
 								t=k1;
 								plays=reverse(plays);
 								c = changeC(c);
@@ -168,7 +177,11 @@ public class Main {
 							}
 							if(isQueen(k1)) {
 								//System.out.println("here in player1");
+								if(isQueen(t)){
+									continue;
+								}
 								p1.remove(i);
+								flag=false;
 								t=k1;
 								int k2 =c+1;
 								k2%=4;
@@ -232,7 +245,11 @@ public class Main {
 								break;
 							}
 							if(isJack(k1)) {
+								if(isJack(t)){
+									continue;
+								}
 								p1.remove(i);
+								flag=false;
 								t=k1;
 								int k2 =c+1;
 								k2%=4;
@@ -274,7 +291,7 @@ public class Main {
 					continue;
 					
 				}
-				else {
+				if(flag) {
 					p1.add(arr[point++]);
 					c++;
 					continue;
@@ -289,20 +306,32 @@ public class Main {
 						int k1 = p2.get(i);
 						if(check(k1,t)) {
 							if(isAce(k1)) {
+								if(isAce(t)){
+									continue;
+								}
 								p2.remove(i);
+								flag=false;
 								t=k1;
 								c+=2;
 								break;
 							}
 							if(isKing(k1)) {
+								if(isKing(t)){
+									continue;
+								}
 								p2.remove(i);
+								flag=false;
 								t=k1;
 								plays=reverse(plays);
 								c = changeC(c);
 								break;								
 							}
 							if(isQueen(k1)) {
+								if(isQueen(t)){
+									continue;
+								}
 								p2.remove(i);
+								flag=false;
 								t=k1;
 								int k2 =c+1;
 								k2%=4;
@@ -326,7 +355,11 @@ public class Main {
 								break;
 							}
 							if(isJack(k1)) {
+								if(isJack(t)){
+									continue;
+								}
 								p2.remove(i);
+								flag=false;
 								t=k1;
 								int k2 =c+1;
 								k2%=4;
@@ -358,6 +391,7 @@ public class Main {
 								break;
 							}
 							p2.remove(i);
+							flag=false;
 							t=k1;
 							c++;
 							break;
@@ -368,7 +402,7 @@ public class Main {
 					continue;
 					
 				}
-				else {
+				if(flag) {
 					p2.add(arr[point++]);
 					c++;
 					continue;
@@ -383,20 +417,32 @@ public class Main {
 						int k1 = p3.get(i);
 						if(check(k1,t)) {
 							if(isAce(k1)) {
+								if(isAce(t)){
+									continue;
+								}
 								p3.remove(i);
+								flag=false;
 								t=k1;
 								c+=2;
 								break;
 							}
 							if(isKing(k1)) {
+								if(isKing(t)){
+									continue;
+								}
 								p3.remove(i);
+								flag=false;
 								t=k1;
 								plays=reverse(plays);
 								c = changeC(c);
 								break;								
 							}
 							if(isQueen(k1)) {
+								if(isQueen(t)){
+									continue;
+								}
 								p3.remove(i);
+								flag=false;
 								t=k1;
 								int k2 =c+1;
 								k2%=4;
@@ -420,7 +466,11 @@ public class Main {
 								break;
 							}
 							if(isJack(k1)) {
+								if(isJack(t)){
+									continue;
+								}
 								p3.remove(i);
+								flag=false;
 								t=k1;
 								int k2 =c+1;
 								k2%=4;
@@ -452,6 +502,7 @@ public class Main {
 								break;
 							}
 							p3.remove(i);
+							flag=false;
 							t=k1;
 							c++;
 							break;
@@ -463,7 +514,7 @@ public class Main {
 					
 					
 				}
-				else {
+				if(flag) {
 					p3.add(arr[point++]);
 					c++;
 					continue;
@@ -478,20 +529,32 @@ public class Main {
 						int k1 = p4.get(i);
 						if(check(k1,t)) {
 							if(isAce(k1)) {
+								if(isAce(t)){
+									continue;
+								}
 								p4.remove(i);
+								flag=false;
 								t=k1;
 								c+=2;
 								break;
 							}
 							if(isKing(k1)) {
+								if(isKing(t)){
+									continue;
+								}
 								p4.remove(i);
+								flag=false;
 								t=k1;
 								plays=reverse(plays);
 								c = changeC(c);
 								break;								
 							}
 							if(isQueen(k1)) {
+								if(isQueen(t)){
+									continue;
+								}
 								p4.remove(i);
+								flag=false;
 								t=k1;
 								int k2 =c+1;
 								k2%=4;
@@ -515,7 +578,11 @@ public class Main {
 								break;
 							}
 							if(isJack(k1)) {
+								if(isJack(t)){
+									continue;
+								}
 								p4.remove(i);
+								flag=false;
 								t=k1;
 								int k2 =c+1;
 								k2%=4;
@@ -547,6 +614,7 @@ public class Main {
 								break;
 							}
 							p4.remove(i);
+							flag=false;
 							t=k1;
 							c++;
 							break;
@@ -558,7 +626,7 @@ public class Main {
 					
 					
 				}
-				else {
+				if(flag) {
 					p4.add(arr[point++]);
 					c++;
 					continue;
